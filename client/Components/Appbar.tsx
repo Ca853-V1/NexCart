@@ -15,7 +15,7 @@ function Appbar({ search, setSearch }: { search: string; setSearch: React.Dispat
     {
       return;
     }
-    axios.get(`${import.meta.env.VITE_BACKEND_URL}/${role}/profile`, 
+    axios.get(`${import.meta.env.VITE_API_URL}/${role}/profile`, 
       {
         headers: { "Authorization": "Bearer " + token }
       }).then(res=>{ setName(res.data.name); }).catch((err)=>{ console.error("Error fetching profile", err); });

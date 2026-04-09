@@ -15,7 +15,7 @@ function ViewProduct()
         imageLink: ""
     });
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_BACKEND_URL}/seller/viewproduct/${id}`).then(res=> { setProductData(res.data.product) });
+        axios.get(`${import.meta.env.VITE_API_URL}/seller/viewproduct/${id}`).then(res=> { setProductData(res.data.product) });
     }, []);
 
     return (

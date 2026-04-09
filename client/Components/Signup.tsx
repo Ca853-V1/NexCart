@@ -11,7 +11,7 @@ function Signup()
     const navigate = useNavigate();
     const handleSignup = async () => {
         try {
-            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/${role}/signup`, { name: name, username: username, password: password });
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/${role}/signup`, { name: name, username: username, password: password });
             const data = response.data;
             localStorage.setItem("token", data.token);
             localStorage.setItem("role", role);

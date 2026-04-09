@@ -19,13 +19,13 @@ function UpdateProduct()
   });
   const token = localStorage.getItem("token");
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_URL}/seller/product/${id}`,
+    axios.get(`${import.meta.env.VITE_API_URL}/seller/product/${id}`,
         {
           headers: { Authorization: "Bearer " + token }
         }).then(res=> { setProductData(res.data.product) }).finally(() => setLoading(false));
   }, []);
   const handleUpdate = async () => {
-    await axios.put(`${import.meta.env.VITE_BACKEND_URL}/seller/product/${id}`, { ...product, price: Number(product.price), deliveryDays: Number(product.deliveryDays), quantity: Number(product.quantity)  },
+    await axios.put(`${import.meta.env.VITE_API_URL}/seller/product/${id}`, { ...product, price: Number(product.price), deliveryDays: Number(product.deliveryDays), quantity: Number(product.quantity)  },
       {
         headers: { Authorization: "Bearer " + token }
       }
@@ -35,7 +35,7 @@ function UpdateProduct()
   const handleDelete = async () => {
     const confirmDelete = window.confirm("Are you sure?");
     if (!confirmDelete) return;
-    await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/seller/product/${id}`,
+    await axios.delete(`${import.meta.env.VITE_API_URL}/seller/product/${id}`,
       {
         headers: { Authorization: "Bearer " + token }
       }

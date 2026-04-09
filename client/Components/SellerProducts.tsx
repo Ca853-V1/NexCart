@@ -21,7 +21,7 @@ function SellerProducts()
   const [loading, setLoading] = useState(true);
   const token = localStorage.getItem("token");
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_URL}/seller/products`, {
+    axios.get(`${import.meta.env.VITE_API_URL}/seller/products`, {
           headers: { Authorization: "Bearer " + token }
         }).then(res=> { setProducts(res.data.products) }).finally(()=>setLoading(false));
   }, [token]);

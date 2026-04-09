@@ -42,7 +42,7 @@ function CustomerCart()
     const [showOrders, setShowOrders] = useState(false);
     const token = localStorage.getItem("token");
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_BACKEND_URL}/customer/cart`, {
+        axios.get(`${import.meta.env.VITE_API_URL}/customer/cart`, {
             headers: { Authorization: "Bearer " + token }
         }).then(res=> { setProducts(res.data.products) }).finally(()=>setLoading(false));
     }, [token]);
@@ -57,14 +57,14 @@ function CustomerCart()
         return acc + (item.product.price*item.quantity);
     }, 0);
     const handlePay = async() => {
-        await axios.post(`${import.meta.env.VITE_BACKEND_URL}/customer/pay`, {},
+        await axios.post(`${import.meta.env.VITE_API_URL}/customer/pay`, {},
             { headers: { Authorization: "Bearer " + token } }
         );
         alert("Payment Successful 💸");
         setProducts([]);
     }
     const handleOrderHistory = async () => {
-        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/customer/orders`,
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/customer/orders`,
             { headers: { Authorization: "Bearer " + token } }
         );
         setOrders(res.data.orders);

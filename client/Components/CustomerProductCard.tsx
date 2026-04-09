@@ -24,7 +24,7 @@ function CustomerProductCard({ product }: { product: Product })
     const [qty, setQty] = useState(0);
     const addproduct = async () => {
       try {
-      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/customer/cart/${id}`, {},
+      await axios.post(`${import.meta.env.VITE_API_URL}/customer/cart/${id}`, {},
           {
             headers: { Authorization: "Bearer " + token }
           });
@@ -34,7 +34,7 @@ function CustomerProductCard({ product }: { product: Product })
       }};
     const deleteproduct = async () => {
       try {
-          await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/customer/cart/${id}`,
+          await axios.delete(`${import.meta.env.VITE_API_URL}/customer/cart/${id}`,
           {
               headers: { Authorization: "Bearer " + token }
           });

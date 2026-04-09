@@ -48,7 +48,7 @@ function Home({ search }: { search: string })
     return stopAutoSlide;
   }, []);
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_BACKEND_URL}/seller/all-products`).then(res => { setProducts(res.data.products); })
+    axios.get(`${import.meta.env.VITE_API_URL}/seller/all-products`).then(res => { setProducts(res.data.products); })
       .catch((err) => console.error("Product fetch error:", err)).finally(() => setLoading(false));
     }, []);
 

@@ -21,7 +21,7 @@ function CustomerCartProduct({ item }: { item: CartItem })
 {
     const token = localStorage.getItem("token");
     const removeItem = async () => {
-        await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/customer/cart/${item.product._id}`,
+        await axios.delete(`${import.meta.env.VITE_API_URL}/customer/cart/${item.product._id}`,
             { headers: { Authorization: "Bearer " + token } }
         );
         window.location.reload();

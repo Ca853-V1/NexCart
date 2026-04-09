@@ -12,7 +12,7 @@ function CreateProduct()
   const [quantity, setQuantity] = useState("");
   const token = localStorage.getItem("token");
   const handleSubmit = async () => {
-    await axios.post(`${import.meta.env.VITE_BACKEND_URL}/seller/products`, { title: title, description: description, price: price, deliveryDays: deliveryDays, imageLink: imageLink, warranty: warranty, quantity: quantity },
+    await axios.post(`${import.meta.env.VITE_API_URL}/seller/products`, { title: title, description: description, price: price, deliveryDays: deliveryDays, imageLink: imageLink, warranty: warranty, quantity: quantity },
     {
       headers: { "Authorization": "Bearer " + token }
     });
