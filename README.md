@@ -11,19 +11,19 @@ This project is a **full-stack e-commerce platform** that allows sellers to mana
 - **DevOps:** Docker
 ---
 ## Features:
-### Seller:
+### 1) Seller:
 - Add new products
 - View all available products
 - Update their own products
 - Delete their own products.
 
-### Customer:
+### 2) Customer:
 - Browse product catalog with dynamic product search
 - Add items to cart
 - Remove items from cart
 - Checkout products
 - View order history
-- Download PDF receipt for orders
+- Download PDF receipt for orders.
 ---
 ## Project Structure:
 ```
@@ -100,7 +100,7 @@ npm install
 ```
 #### (b) Create `.env` file:
 ```
-VITE_BACKEND_URL=http://localhost:3000
+VITE_API_URL=http://localhost:3000
 ```
 #### (c) Run frontend:
 ```
@@ -113,6 +113,10 @@ npm run dev
 docker-compose up --build
 ```
 #### This will start frontend, backend and mongoDB container (configure it).
+---
+## Deployment:
+- The frontend is deployed on vercel - https://nex-cart-phi.vercel.app/
+- The backend is deployed on render - https://nexcart-backend-pdv2.onrender.com/
 ---
 ## Future Scope:
 - Add product reviews and ratings
