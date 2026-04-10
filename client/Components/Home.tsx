@@ -7,7 +7,7 @@ import axios from "axios";
 
 const images = [
   "/public/banners/1.jpg",
-  "/banners/2.jpg",
+  "./public/banners/2.jpg",
   "/banners/3.jpg",
   "/banners/4.jpg",
   "/banners/5.jpg",
