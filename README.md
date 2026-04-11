@@ -70,7 +70,7 @@ NexCart
 ## Installation & Setup:
 ### 1) Clone the repository:
 ```
-git clone 
+git clone https://github.com/Ca853-V1/NexCart.git
 cd nexcart
 ```
 
